@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Namoro</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');       
+        body {
+            background-color: #F7D756;
+            text-align: center;
+            justify-content: center;
+            align-items: center;    
+            height: 100vh;          
+            margin: 0;   
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Krona One', sans-serif;
+            color: #7C2226;
+        }
+
+        h3, p {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        .dps {
+            font-size: 50px;
+        }
+
+        #nao {
+            font-size: 24px;
+            color: #333;
+            background-color: #F7D756;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+        }
+
+        strong {
+            color: #7C2226
+            ;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container">
+            <h1>Olá, Juna!</h1>
+            <h3>Vamos assistir Dead Poets Society <strong>hoje</strong>? </h3>
+            <p>Responda com muita sabedoria.</p>
+            <p class="dps" onclick="mostrarResposta()"><img src="./imgs/dps.png" alt=""></p>
+            <button id="nao" onmouseover="mudarPosicao()">Não</button>
+            <p id="resposta" style="display: none;"></p>
+    </div>
+    <script>
+        function mostrarResposta() {
+            const respostaElement = document.getElementById('resposta');
+            respostaElement.style.display = 'block';
+            respostaElement.innerHTML = 'Sim! Vamos ver agora! ❤️';
+            respostaElement.style.fontFamily = 'Montserrat, sans-serif';
+            respostaElement.style.fontWeight = 'bold';
+}
+
+
+        function mudarPosicao() {
+            const buttonNao = document.getElementById('nao');
+            const randomX = Math.floor(Math.random() * window.innerWidth);
+            const randomY = Math.floor(Math.random() * window.innerHeight);
+            buttonNao.style.left = `${randomX}px`;
+            buttonNao.style.top = `${randomY}px`;
+}
+    </script>
+</body>
+</html>
